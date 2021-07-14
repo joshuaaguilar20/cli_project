@@ -3,16 +3,16 @@ function printResult(name, lastName, location) {
     console.log('name:', name, ',');
   }
   else {
-    console.log('name: Unknown,');
+    console.log('name: Unknown ,');
   }
   if(lastName) {
     console.log('lastname:', lastName, ',');
   }
   else {
-    console.log('lastname: Unknown,');
+    console.log('lastname: Unknown ,');
   }
   if(location) { 
-    console.log('location:', location, ',');
+    console.log('location:', location);
   }
   else {
     console.log('location: Unknown');
