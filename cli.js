@@ -3,7 +3,7 @@ function printResult(name, lastName, location) {
     console.log(`name: ${name},`);
   }
   else {
-    console.log('name: Unknown ,');
+    console.log('name: Unknown,');
   }
   if(lastName) {
     console.log(`lastname: ${lastname},`);
