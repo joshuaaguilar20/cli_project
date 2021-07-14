@@ -1,47 +1,34 @@
-function printResult(name, lastName, location) {
-  if(name) {
-    console.log(`name: ${name},`);
-  }
-  else {
-    console.log('name: Unknown,');
-  }
-  if(lastName) {
-    console.log(`lastname: ${lastname},`);
-  }
-  else {
-    console.log('lastname: Unknown,');
-  }
-  if(location) { 
-    console.log(`location: ${location},`);
-  }
-  else {
-    console.log('location: Unknown');
-  }
+function error(msg){
+ console.error(msg)
 }
 
+// gets cli info
 function getInfo(){
-  let name = null;
-  let lastName = null;
-  let location = null;
-
   let args = process.argv.slice(2);
 
+// throw error and return if use fails to provide arguments
+  if(args.length <=1){
+    error('must provide at least one argument')
+    return
+  }
+  
   for(let i = 0; i < args.length; i+=2) {
     switch(args[i]) {
       case '-n':
-        name = args[i+1];
+        var name = args[i+1];
         break;
       case '-ln':
-        lastName = args[i+1];
+        var lastName = args[i+1];
         break;
       case '-l':
-        location = args[i+1];
+        var location = args[i+1];
         break;
       default:
         console.log('Unknown flag.')
     }
   }
-  printResult(name,lastName,location)
+  //now make request with arguments
+  console.log('Name:',name, 'Lastname:',lastName,'location',location)
 }
 
 getInfo()
